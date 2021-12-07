@@ -1,0 +1,7 @@
+.about-border {
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #730d0d;
+    margin: 20px auto;
+}

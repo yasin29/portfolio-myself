@@ -1,0 +1,17 @@
+.about-border {
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #730d0d;
+    margin: 20px auto;
+}
+
+.blogSection{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2196f3;
+    overflow: hidden;
+}

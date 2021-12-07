@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import Home from './components/pages/Home/Home/Home';
+import Footer from './components/shared/Footer/Footer';
+import Header from './components/shared/Header/Navbar/Header';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+
 
 function App() {
+  console.log(process.env.REACT_APP_FB_APP_ID);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header style={{ overflowX: 'hidden' }}></Header>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+        </Switch>
+        <Footer></Footer>
+      </Router>
+      <MessengerCustomerChat
+        pageId={process.env.REACT_APP_FB_PAGE_ID}
+        appId={process.env.REACT_APP_FB_APP_ID}
+      />
     </div>
   );
 }
