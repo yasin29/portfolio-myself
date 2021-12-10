@@ -22,11 +22,7 @@ video {
     object-fit: contain;
   }
   
-  .hero-container > h1 {
-    color: #fff;
-    font-size: 100px;
-    margin-top: -100px;
-  }
+ 
   
   .hero-container > p {
     margin-top: 8px;
@@ -50,19 +46,20 @@ video {
   
   @media screen and (max-width: 960px) {
     .hero-container > h1 {
-      font-size: 70px;
+      font-size: 32px;
       margin-top: -150px;
     }
   }
   
   @media screen and (max-width: 768px) {
     .hero-container > h1 {
-      font-size: 50px;
+      font-size: 32px;
       margin-top: -100px;
     }
   
     .hero-container > p {
       font-size: 30px;
+      overflow-x: hidden;
     }
   
     .btn-mobile {
@@ -72,3 +69,55 @@ video {
   
     
   }
+
+
+  .helloName{
+    color: #fff;
+    font-size: 60px;
+    margin-top: -100px;
+  }
+  .first{
+    display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+  }
+
+  .first:first-of-type {    /* For increasing performance 
+    ID/Class should've been used. 
+    For a small demo 
+    it's okaish for now */
+animation: showup 7s infinite;
+}
+
+
+.first:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+.first:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
+}

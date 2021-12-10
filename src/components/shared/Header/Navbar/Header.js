@@ -41,13 +41,21 @@ const Header = () => {
     }
     window.addEventListener('scroll', changeBackground);
 
+    const element = <i className="fab fa-battle-net fa-spin"></i>
+    // for hover effect 
+    const changeColor = (e) => {
+        e.target.style.color = 'cyan';
+    }
+    const changeBack = (e) => {
+        e.target.style.color = 'white';
+    }
+
     return (
         <>
             <nav className={navbar ? 'navbar active' : 'navbar'} id="nav">
                 <div className='navbar-container'>
-                    <Link to='/home' className='navbar-logo' onClick={homeClick}>
-                        YB
-                        <i className='fab fa-typo3' />
+                    <Link onMouseOver={changeColor} onMouseLeave={changeBack} style={{ textDecoration: 'none', color: 'white' }} to='/home' className='navbar-logo' onClick={homeClick}>
+                        YB  {element}
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -73,18 +81,18 @@ const Header = () => {
                         </li>
                         <li className='nav-item'>
                             <label for="drop-1" className='nav-links toggle'>Hire Me</label>
-                            <ul >
-                                < li>
+                            <ul>
+                                < li className='nav-links'>
                                     <HashLink
                                         smooth={true} duration={500} exact='true' offset={-80}
                                         to='/home#about'
-                                        className='nav-links'
+                                        style={{ textDecoration: 'none', color: '#fff' }}
                                         onClick={closeMobileMenu}
                                     >
                                         About Me
                                     </HashLink>
                                 </li>
-                                <li className='nav-links'><a style={{ textDecoration: 'none', color: '#fff' }} href="https://drive.google.com/uc?export=download&id=1NGmy-zLqVUxiPSDh26ukpZixsP2mzpdK">Download resume</a></li>
+                                <li className='nav-links'><a style={{ textDecoration: 'none', color: '#fff' }} href="https://drive.google.com/uc?export=download&id=1NGmy-zLqVUxiPSDh26ukpZixsP2mzpdK">Download resume</a> <i className="fas fa-download"></i></li>
                             </ul>
                         </li>
 

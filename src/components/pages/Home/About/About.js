@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Modal, Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import './About.css'
 const About = () => {
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         Aos.init({ duration: 1000 });
@@ -17,8 +18,8 @@ const About = () => {
             }}>
                 <h1 data-aos="fade-right" style={{ textAlign: 'center', fontWeight: 'bold', color: 'white' }}>About Me</h1>
                 <div data-aos="fade-left" className="about-border"></div>
-                <Row>
-                    <Col md={6} className="d-flex align-items-center justify-content-center flex-column mb-3">
+                <Row className="mb-3">
+                    <Col data-aos="fade-down-right" md={6} className="d-flex align-items-center justify-content-center flex-column mb-3">
                         <div
                             className="badge-base LI-profile-badge" data-locale="en_US"
                             data-size="large"
@@ -27,11 +28,26 @@ const About = () => {
                             data-vanity="yasin-billah"
                             data-version="v1">
                         </div>
-                        <Button variant="secondary" className="w-50 mt-3">
-                            <a style={{ color: 'white', textDecoration: 'none' }} href="https://drive.google.com/uc?export=download&id=1NGmy-zLqVUxiPSDh26ukpZixsP2mzpdK">Resume</a> <i className="fas fa-download"></i>
-                        </Button>
+                        <Button variant="secondary" className="w-50 mt-3" onClick={() => setShow(true)}>
+                            Resume</Button>
+                        <Modal
+                            size="lg"
+                            show={show}
+                            onHide={() => setShow(false)}
+                            dialogClassName="modal-90w"
+                            aria-labelledby="example-custom-modal-styling-title"
+                        >
+                            <Modal.Header closeButton>
+                                <Modal.Title id="example-custom-modal-styling-title">
+                                    RESUME
+                                </Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body style={{ margin: 'auto' }}>
+                                <iframe title="Resume" src="https://drive.google.com/file/d/1T4gvTKMtMUlubgKkMNJ9cHEFrhilCTI8/preview" width="100%" height="480" allow="autoplay"></iframe>
+                            </Modal.Body>
+                        </Modal>
                     </Col>
-                    <Col md={6} className="d-flex justify-content-center flex-column">
+                    <Col data-aos="fade-down-left" md={6} className="d-flex justify-content-center flex-column">
                         <div style={{ color: 'white', textAlign: 'justify' }}>
                             <h1 style={{ fontFamily: `'Lobster', cursive` }}>Who am I?</h1>
                         </div>
@@ -43,6 +59,147 @@ const About = () => {
 
                             I always love what I do and always do what I love. This makes me happy and always believe the best time for a new beginning is now, it’s never too late. Have fun.
 
+                        </div>
+                    </Col>
+                </Row>
+                <Row style={{ color: 'white', textAlign: 'justify', margin: 'auto' }}>
+                    <Col data-aos="fade-down-right" md={12} className="d-flex align-items-center justify-content-center flex-column mb-3">
+                        <h1 style={{ fontFamily: `'Lobster', cursive` }}>Field of Interest</h1>
+                    </Col>
+                    <Col data-aos="fade-down-left" md={12} className="d-flex justify-content-center flex-column">
+                        <ul className="list">
+                            <li><a href="#0">① <span>Web Development</span></a></li>
+                            <li><a href="#0">② <span>Data Science</span></a></li>
+                            <li><a href="#0">③ <span>Machine Learning</span></a></li>
+                            <li><a href="#0">④ <span>Blockchain</span></a></li>
+                            <li><a href="#0">⑤ <span>Business Development</span></a></li>
+                            <li><a href="#0">⑥ <span>Digital Marketing</span></a></li>
+                        </ul>
+                    </Col>
+                </Row>
+                <Row style={{ color: 'white', textAlign: 'justify', margin: 'auto' }}>
+                    <Col data-aos="fade-down-right" md={12} className="d-flex align-items-center justify-content-center flex-column mb-3">
+                        <h1 style={{ fontFamily: `'Lobster', cursive` }}>Skills</h1>
+                    </Col>
+                    <Col data-aos="fade-down-left" md={12} className="d-flex justify-content-center mx-auto">
+                        <div>
+                            <div className="social" >
+                                <div className="front">
+                                    <i className="fab fa-html5"> HTML</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fab fa-html5"></i>
+
+                                </div>
+                            </div>
+
+                            <div className="social social-css">
+                                <div className="front">
+                                    <i className="fab fa-css3-alt"> CSS</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fab fa-css3-alt"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-github">
+                                <div className="front">
+                                    <i className="fa fa-github"> GitHub</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fa fa-github"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-bootstrap">
+                                <div className="front">
+                                    <i className="fab fa-bootstrap"> Bootstrap</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fab fa-bootstrap"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-javascript" >
+                                <div className="front">
+                                    <i className="fab fa-js"> JavaScript</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fab fa-js"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-react">
+                                <div className="front">
+                                    <i className="fab fa-react"> React</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fab fa-react"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-nodejs" >
+                                <div className="front">
+                                    <i className="fab fa-node"> Node JS</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fab fa-node"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-python" >
+                                <div className="front">
+                                    <i className="fab fa-python"> Python</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fab fa-python"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-wordpress">
+                                <div className="front">
+                                    <i className="fab fa-wordpress"> Wordpress</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fab fa-wordpress"></i>
+                                </div>
+                            </div>
+                            {/* ----  */}
+                            <div className="social social-react">
+                                <div className="front">
+                                    <i className="far fa-file-word"> MS-Word</i>
+                                </div>
+                                <div className="back">
+                                    <i className="far fa-file-word"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-nodejs" >
+                                <div className="front">
+                                    <i className="fas fa-file-excel"> Excel</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fas fa-file-excel"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-python" >
+                                <div className="front">
+                                    <i className="fas fa-file-powerpoint"> PowerPoint</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fas fa-file-powerpoint"></i>
+                                </div>
+                            </div>
+
+                            <div className="social social-wordpress">
+                                <div className="front">
+                                    <i className="fas fa-camera-retro"> Photography</i>
+                                </div>
+                                <div className="back">
+                                    <i className="fas fa-camera-retro"></i>
+                                </div>
+                            </div>
                         </div>
                     </Col>
                 </Row>

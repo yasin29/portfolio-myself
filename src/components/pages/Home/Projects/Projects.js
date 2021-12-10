@@ -58,31 +58,29 @@ const Projects = () => {
     ]
     return (
         <div id="projects" style={{ scrollMarginTop: '5rem' }}>
-            <Container fluid className="p-3" style={{ background: '#fff', backgroundImage: `url(https://cutewallpaper.org/21/coding-wallpaper/Coding-Wallpapers-Hd-Code-Background-Full-Hd-Free-.jpg)`, backgroundSize: 'cover' }}>
-                <div style={{ background: 'rgba(0, 1, 14, .9)', borderRadius: '20px' }}>
-                    <h1 data-aos="fade-right" style={{ textAlign: 'center', fontWeight: 'bold', color: 'white' }}>Projects</h1>
-                    <div data-aos="fade-left" className="about-border"></div>
-                    <Row xs={1} lg={2} className="g-4 mb-4 p-md-5 m-md-2" >
-                        {
-                            items.map(item =>
-                                <CardItem
-                                    item={item}
-                                    key={item.src}
-                                ></CardItem>
-                            )
-                        }
-                    </Row>
-                    <Row xs={1} lg={3} className="g-4" >
-                        {
-                            items2.map(item =>
-                                <CardItem
-                                    item={item}
-                                    key={item.src}
-                                ></CardItem>
-                            )
-                        }
-                    </Row>
-                </div>
+            <Container fluid className="p-3" style={{ background: '#fff', backgroundImage: `url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/c1d79e46701013.586d242e2a0b5.gif)`, backgroundSize: 'cover' }}>
+                <h1 data-aos="fade-right" style={{ textAlign: 'center', fontWeight: 'bold', color: 'white' }}>Projects</h1>
+                <div data-aos="fade-left" className="about-border"></div>
+                <Row style={{ justifyContent: 'center' }} xs={1} lg={2} className="g-4 mb-4 p-md-5 m-md-2" >
+                    {
+                        items.map(item =>
+                            <CardItem
+                                item={item}
+                                key={item.src}
+                            ></CardItem>
+                        )
+                    }
+                </Row>
+                <Row style={{ justifyContent: 'center' }} xs={1} lg={3} className="g-4" >
+                    {
+                        items2.map(item =>
+                            <CardItem
+                                item={item}
+                                key={item.src}
+                            ></CardItem>
+                        )
+                    }
+                </Row>
             </Container>
         </div>
     );

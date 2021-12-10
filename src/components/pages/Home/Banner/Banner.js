@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Particles from "react-tsparticles";
-import { Button } from 'react-bootstrap';
-import { HashLink } from 'react-router-hash-link';
 import '../../../../App.css';
 import './Banner.css'
+import QuoteGenerator from './QuoteGenerator/QuoteGenerator';
+import Typical from 'react-typical'
+
 const Banner = () => {
     const [show, setShow] = useState(false);
 
@@ -107,23 +108,17 @@ const Banner = () => {
                 }}
             />
             <video src='/videos/video-4.mp4' autoPlay loop muted />
-            <h1>HELLO, I am Yasin Billah</h1>
-            <p>Front-End Web Developer</p>
+            <h1 className="helloName text-center"><span className="first">HELLO, </span><span className="first"><span>I am Yasin</span></span></h1>
+            <p className="text-center">
+                I'm{' '}
+                <Typical
+                    steps={['an IT Graduate', 750, 'A Front-End Web Developer', 750, 'Digital Marketing expert', 750, 'A Data Science Enthusiast', 750, 'A Business enthusiast', 750]}
+                    loop={Infinity}
+                    wrapper="b"
+                />
+            </p>
             <div className='hero-btns'>
-                <HashLink
-                    smooth={true} duration={500} exact='true' offset={-80}
-                    to='/home#about'
-                >
-                    <Button
-                        variant="outline-dark"
-                        style={{ border: '2px solid white', color: 'white' }}
-                    >
-                        Learn About Me
-                    </Button>
-                </HashLink>
-                <Button>
-                    <a style={{ color: 'white', textDecoration: 'none' }} href="https://drive.google.com/uc?export=download&id=1NGmy-zLqVUxiPSDh26ukpZixsP2mzpdK">Resume</a> <i className="fas fa-download"></i>
-                </Button>
+                <QuoteGenerator />
             </div>
         </div>
     );

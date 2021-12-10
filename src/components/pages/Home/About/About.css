@@ -2,7 +2,7 @@
   color: #f4f4f4;
     background: rgba(0, 0, 0, 0.3);
     border: 2px solid rgba(0, 0, 0, 0.1);
-    height: 400px; /* maximum height of the box, feel free to change this! */
+    height: 400px; 
     padding: 15px;
     border-radius: 5px;
     margin-right: 100px;
@@ -12,6 +12,89 @@
 ::-webkit-scrollbar {
     width: 20px;
   }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .list li {
+    flex: 1;
+  }
+  .list li a {
+    text-decoration: none;
+    color: inherit;
+    padding-top: 1rem;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    font-size: 40px;
+  }
+  .list li a span {
+    display: block;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    font-size: 22px;
+    margin-top: 1rem;
+  }
+  
+  @media (hover: hover) {
+    .list li a span {
+      transform: translateY(100px);
+      transition: 0.2s;
+    }
+    .list:hover span {
+      transform: translateY(0);
+    }
+    .list li:nth-child(1) span {
+      transition-delay: 0.0s;
+    }
+    .list li:nth-child(2) span {
+      transition-delay: 0.05s;
+    }
+    .list li:nth-child(3) span {
+      transition-delay: 0.1s;
+    }
+    .list li:nth-child(4) span {
+      transition-delay: 0.15s;
+    }
+    .list li:nth-child(5) span {
+      transition-delay: 0.2s;
+    }
+    .list li:nth-child(6) span {
+      transition-delay: 0.25s;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  .list li:nth-child(1) {
+    background: #90CAF9;
+  }
+  .list li:nth-child(2) {
+    background: #80DEEA;
+  }
+  .list li:nth-child(3) {
+    background: #A5D6A7;
+  }
+  .list li:nth-child(4) {
+    background: #E6EE9C;
+  }
+  .list li:nth-child(5) {
+    background: #FFF176;
+  }
+  .list li:nth-child(6)  {
+    background: #FFD54F;
+  }
+
+
+  
+  
   
   /* Track */
   ::-webkit-scrollbar-track {
@@ -21,7 +104,7 @@
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(73, 13, 73); 
+    background: rgb(32, 4, 32); 
     border-radius: 10px;
   }
   
@@ -36,4 +119,58 @@
         margin-right: 0px;
        
     }
+    .list {
+      flex-direction: column;
+    }
   }
+
+  a,a:visited { color: #fff; }
+a:hover { color: #fff; }
+
+.social {
+	float: left;
+	width: 100px; height: 100px; 	
+	display: block; text-align: center; line-height:103px; color: #fff;
+	
+	position: relative;
+	transform:rotateY(0deg);
+	transition:transform .25s ease-out;
+	transform-style:preserve-3d;
+}
+.social > div {
+	width: 100px; height: 100px; background: #000;
+	position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+}
+.social >.front {
+	transform:translateZ(40px);
+}
+.social >.back {
+	background: #3B5998; font-size: 3em;
+	transform:rotateY(-100deg) translateZ(40px);
+}
+
+/*  Social Media Colors 
+	Facebook #3B5998
+	Flickr #FE0883
+	Foursquare #8FD400
+	Google+ #C63D2D
+	Instagram #4E433C
+	Linkedin #4875B4
+	Tumblr #2B4964
+	Twitter #33CCFF
+	Vimeo #86B32D
+	Youtube #FF3333
+	Dribbble #ea4c89
+*/
+.social.social-css > .back { background: #55ACEE; }
+.social.social-github > .back { background: #f3f3f3; color: #000; }
+.social.social-bootstrap > .back { background: #e3262e; }
+.social.social-javascript > .back { background: #dd4B39; }
+.social.social-react > .back { background: #12A5F4; }
+.social.social-nodejs > .back { background: #4875B4; }
+.social.social-python > .back { background: #ea4c89; }
+
+/* Hover */
+.social:hover {
+	transform: rotateY(100deg);
+}
